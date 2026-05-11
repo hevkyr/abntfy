@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ABNTfy — Formatação automática em norma ABNT (NBR 6023:2025)</title>
+    <meta name="description" content="ABNTfy: formate trabalhos acadêmicos em norma ABNT automaticamente. Margens, fontes, citações, legendas e referências (NBR 6023:2025) exportados em .docx." />
+    <meta name="author" content="ABNTfy" />
+    <link rel="canonical" href="/" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+
+    <meta property="og:title" content="ABNTfy — Formatação ABNT automática (NBR 6023:2025)" />
+    <meta property="og:description" content="Escreva em texto livre, exporte um .docx já formatado em norma ABNT: capa, seções, citações, legendas e referências." />
+    <meta property="og:type" content="website" />
+    <meta property="og:image" content="/og-abntfy.png" />
+
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="ABNTfy" />
+    <meta name="twitter:description" content="Formatação acadêmica ABNT automática — o LaTeX brasileiro, sem aprender LaTeX." />
+
+    <!-- SPA fallback decoder para GitHub Pages (par com public/404.html) -->
+    <script>
+      (function () {
+        if (location.search && location.search.indexOf("?/") === 0) {
+          var decoded = location.search
+            .slice(2)
+            .split("&")
+            .map(function (s) {
+              return s.replace(/~and~/g, "&");
+            })
+            .join("?");
+          history.replaceState(null, "", location.pathname.slice(0, -1) + decoded + location.hash);
+        }
+      })();
+    </script>
+  </head>
+
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>

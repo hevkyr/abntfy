@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <title>ABNTfy</title>
+    <script>
+      // SPA fallback para GitHub Pages: redireciona qualquer rota não encontrada
+      // de volta para o index.html mantendo o caminho original como hash,
+      // para o React Router resolver no client.
+      (function () {
+        var segmentCount = 1; // /abntfy/
+        var l = window.location;
+        l.replace(
+          l.protocol +
+            "//" +
+            l.hostname +
+            (l.port ? ":" + l.port : "") +
+            l.pathname
+              .split("/")
+              .slice(0, 1 + segmentCount)
+              .join("/") +
+            "/?/" +
+            l.pathname.slice(1).split("/").slice(segmentCount).join("/").replace(/&/g, "~and~") +
+            (l.search ? "&" + l.search.slice(1).replace(/&/g, "~and~") : "") +
+            l.hash,
+        );
+      })();
+    </script>
+  </head>
+  <body></body>
+</html>
